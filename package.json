@@ -1,0 +1,37 @@
+{
+  "name": "Bootcamp-GoStack-DesafioFinal",
+  "version": "1.0.0",
+  "description": "Desafio final do bootcamp GoStack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lebarreto/Bootcamp-GoStack-DesafioFinal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lebarreto/Bootcamp-GoStack-DesafioFinal/issues"
+  },
+  "homepage": "https://github.com/lebarreto/Bootcamp-GoStack-DesafioFinal#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3",
+    "yup": "^0.28.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.12.1"
+  }
+}
