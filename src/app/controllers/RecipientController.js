@@ -31,8 +31,6 @@ class RecipientController{
 
   // update recipient
   async updateRecipient(req, res){
-    // save recipient id
-    const { r_id } = req.params;
 
     // validate fields
     const schema = Yup.object().shape({
@@ -50,9 +48,7 @@ class RecipientController{
     }
 
     // search in db for recipient
-    const recipient = await Recipient.findByPk(r_id);
-
-    console.log(r_id);
+    const recipient = await Recipient.findByPk(req.params.id);
 
     // update recipient
     const { id, name, street, number, complement, state, city, zip } = await recipient.update(req.body);
