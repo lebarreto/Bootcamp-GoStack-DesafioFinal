@@ -8,6 +8,10 @@ import RecipientController from './app/controllers/RecipientController';
 import FileController from './app/controllers/FileController';
 import authConfig from './app/middlewares/auth';
 import DeliveryController from './app/controllers/DeliveryController';
+import SignatureController from './app/controllers/SignatureController';
+import OrderController from './app/controllers/OrderController';
+import DeliverymanController from './app/controllers/DeliverymanController';
+import DeliveryProblemController from './app/controllers/DeliveryProblemController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -25,5 +29,18 @@ routes.put('/deliveries/:id', DeliveryController.update);
 routes.get('/deliveries', DeliveryController.list);
 routes.delete('/deliveries/:id', DeliveryController.remove);
 
+routes.post('/signatures', upload.single('file'), SignatureController.upload);
+routes.post('/orders', OrderController.createOrder);
+routes.put('/orders/:id', OrderController.update);
+routes.delete('/orders/:id', OrderController.delete);
+routes.get('/orders', OrderController.list);
+routes.get('/orders/deliveryTime', OrderController.listDeliveryTime);
+
+routes.get('/deliveryman/:id/deliveries', DeliverymanController.list);
+routes.put('/deliveryman/:id/update/:delivery', DeliverymanController.update);
+
+routes.post('/delivery/:id/problems', DeliveryProblemController.store);
+routes.get('/delivery/:id/problems', DeliveryProblemController.list);
+routes.delete('/problem/:id/cancel-delivery', DeliveryProblemController.destroy);
 
 export default routes;
