@@ -21,6 +21,7 @@ routes.post('/session', SessionController.verifyUser);
 
 routes.use(authConfig);
 routes.post('/recipient', RecipientController.addRecipient);
+routes.get('/recipient', RecipientController.listRecipient);
 routes.put('/recipient/:id', RecipientController.updateRecipient);
 
 routes.post('/files', upload.single('file'), FileController.upload);
