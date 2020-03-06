@@ -21,7 +21,7 @@ class OrderController {
 
 		const orders = await Order.findAll({
 			where: filterOrder,
-			attributes: ['id', 'product', 'start_date', 'end_date'],
+			attributes: ['id', 'product', 'start_date', 'end_date', 'canceled_at'],
 			include: [
 				{
 					model: Recipient,
@@ -40,6 +40,31 @@ class OrderController {
 				}
 			]
 		});
+		return res.json(orders);
+	}
+
+	async listOrderById(req, res) {
+		const orders = await Order.findByPk(req.params.id, {
+			attributes: ['id', 'product', 'start_date', 'end_date', 'canceled_at'],
+			include: [
+				{
+					model: Recipient,
+					as: 'recipient',
+					attributes: ['id', 'name', 'street', 'number', 'state', 'city', 'zip']
+				},
+				{
+					model: Delivery,
+					as: 'delivery',
+					attributes: ['id', 'name', 'email']
+				},
+				{
+					model: Signature,
+					as: 'signature',
+					attributes: ['name', 'path', 'url']
+				}
+			]
+		});
+
 		return res.json(orders);
 	}
 

@@ -5,6 +5,20 @@ import Delivery from '../models/Delivery';
 import File from '../models/File';
 
 class DeliveryController {
+	async listById(req, res) {
+		const deliveryman = await Delivery.findByPk(req.params.id, {
+			include: [
+				{
+					model: File,
+					as: 'avatar',
+					attributes: ['name', 'path', 'url']
+				}
+			]
+		});
+
+		return res.json(deliveryman);
+	}
+
 	async list(req, res) {
 		const { q } = req.query;
 		const filterDelivery = {};

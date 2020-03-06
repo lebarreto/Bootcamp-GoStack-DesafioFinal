@@ -1,25 +1,25 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Signature extends Model{
-  static init(sequelize){
-    super.init({
-      name: Sequelize.STRING,
-      path: Sequelize.STRING,
-      url: {
-        type: Sequelize.VIRTUAL,
-        get(){
-          return `http://localhost:3001/signatures/${this.path}`
-        }
-      },
-    },
-    {
-      sequelize,
-    });
+class Signature extends Model {
+	static init(sequelize) {
+		super.init(
+			{
+				name: Sequelize.STRING,
+				path: Sequelize.STRING,
+				url: {
+					type: Sequelize.VIRTUAL,
+					get() {
+						return `http://localhost:3004/signatures/${this.path}`;
+					}
+				}
+			},
+			{
+				sequelize
+			}
+		);
 
-    return this;
-
-  }
-
+		return this;
+	}
 }
 
 export default Signature;

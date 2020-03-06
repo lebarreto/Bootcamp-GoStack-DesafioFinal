@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  background: #ffffff 0% 0% no-repeat padding-box;
+
   p {
     top: 369px;
     left: 570px;
@@ -11,5 +13,9 @@ export const Container = styled.div`
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  form {
+    background: #ffffff 0% 0% no-repeat padding-box;
   }
 `;
