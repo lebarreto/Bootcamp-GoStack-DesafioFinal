@@ -18,6 +18,7 @@ const schema = Yup.object().shape({
   city: Yup.string().required('O nome da cidade é obrigatório'),
   state: Yup.string().required('O estado é obrigatório'),
   zip: Yup.string().required('O zip é obrigatório'),
+  email: Yup.string().required('O email é obrigatório'),
 });
 
 export default function CriacaoDestinatario() {
@@ -30,6 +31,7 @@ export default function CriacaoDestinatario() {
   const [, setCity] = useState([]);
   const [, setState] = useState([]);
   const [, setZip] = useState([]);
+  const [, setEmail] = useState([]);
 
   const handleNameChange = e => {
     setName(e.target.value);
@@ -59,6 +61,10 @@ export default function CriacaoDestinatario() {
     setZip(e.target.value);
   };
 
+  const handleEmailChange = e => {
+    setEmail(e.target.value);
+  };
+
   async function handleSubmit({
     name,
     street,
@@ -67,6 +73,7 @@ export default function CriacaoDestinatario() {
     city,
     state,
     zip,
+    email,
   }) {
     dispatch(
       RecipientActions.addRequest(
@@ -76,7 +83,8 @@ export default function CriacaoDestinatario() {
         complement,
         city,
         state,
-        zip
+        zip,
+        email
       )
     );
   }
@@ -86,11 +94,11 @@ export default function CriacaoDestinatario() {
       <EditRecipient>
         <Form schema={schema} onSubmit={handleSubmit}>
           <HeaderPages title="Criação de Destinatários">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}
@@ -106,6 +114,14 @@ export default function CriacaoDestinatario() {
                 name="name"
                 placeholder="Nome do destinatário"
                 onChange={handleNameChange}
+              />
+            </div>
+            <div className="divEmail" id="email">
+              <p>E-mail</p>
+              <Input
+                name="email"
+                placeholder="E-mail do destinatário"
+                onChange={handleEmailChange}
               />
             </div>
             <div className="divStreet" id="street">

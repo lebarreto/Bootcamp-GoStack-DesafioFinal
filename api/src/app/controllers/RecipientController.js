@@ -40,7 +40,8 @@ class RecipientController {
 			complement: Yup.string(),
 			state: Yup.string().required(),
 			city: Yup.string().required(),
-			zip: Yup.number().required()
+			zip: Yup.number().required(),
+			email: Yup.string().required()
 		});
 
 		if (!(await schema.isValid(req.body))) {
@@ -48,8 +49,8 @@ class RecipientController {
 		}
 
 		// insert recipient
-		const { id, name, street, number, complement, state, city, zip } = await Recipient.create(req.body);
-		return res.json({ id, name, street, number, complement, state, city, zip });
+		const { id, name, street, number, complement, state, city, zip, email } = await Recipient.create(req.body);
+		return res.json({ id, name, street, number, complement, state, city, zip, email });
 	}
 
 	// update recipient
@@ -62,7 +63,8 @@ class RecipientController {
 			complement: Yup.string(),
 			state: Yup.string().required(),
 			city: Yup.string().required(),
-			zip: Yup.number().required()
+			zip: Yup.number().required(),
+			email: Yup.string().required()
 		});
 
 		if (!(await schema.isValid(req.body))) {
@@ -73,8 +75,8 @@ class RecipientController {
 		const recipient = await Recipient.findByPk(req.params.id);
 
 		// update recipient
-		const { id, name, street, number, complement, state, city, zip } = await recipient.update(req.body);
-		return res.json({ id, name, street, number, complement, state, city, zip });
+		const { id, name, street, number, complement, state, city, zip, email } = await recipient.update(req.body);
+		return res.json({ id, name, street, number, complement, state, city, zip, email });
 	}
 
 	// delete recipient

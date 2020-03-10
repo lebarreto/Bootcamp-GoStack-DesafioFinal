@@ -58,6 +58,41 @@ export const FormRecipient = styled.div`
     }
   }
 
+  .divEmail {
+    padding-top: 20px;
+    padding-left: 20px;
+
+    p {
+      width: 50px;
+      height: 19px;
+      text-align: left;
+      letter-spacing: 0;
+      color: #444444;
+      opacity: 1;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    input {
+      margin-top: 10px;
+      width: 890px;
+      height: 45px;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      opacity: 1;
+      padding-left: 10px;
+      color: #999;
+
+      &::placeholder {
+        text-align: left;
+        letter-spacing: 0;
+        color: #999999;
+        opacity: 1;
+      }
+    }
+  }
+
   .divStreet {
     padding-top: 20px;
     padding-left: 20px;

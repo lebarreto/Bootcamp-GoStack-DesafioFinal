@@ -21,11 +21,12 @@ const signature = multer(multerConfigSignature);
 routes.post('/users', UserController.addUser);
 routes.post('/session', SessionController.verifyUser);
 
+routes.get('/recipient/:id', RecipientController.listById);
+
 routes.use(authConfig);
 routes.post('/recipient', RecipientController.addRecipient);
 routes.get('/recipient', RecipientController.listRecipient);
 routes.put('/recipient/:id', RecipientController.updateRecipient);
-routes.get('/recipient/:id', RecipientController.listById);
 routes.delete('/recipient/:id', RecipientController.delete);
 
 routes.post('/files', upload.single('file'), FileController.upload);

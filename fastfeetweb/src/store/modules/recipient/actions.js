@@ -35,7 +35,16 @@ export function deleteSuccess(id) {
   };
 }
 
-export function addRequest(name, street, number, complement, city, state, zip) {
+export function addRequest(
+  name,
+  street,
+  number,
+  complement,
+  city,
+  state,
+  zip,
+  email
+) {
   return {
     type: '@recipient/ADD_REQUEST',
     payload: {
@@ -46,6 +55,7 @@ export function addRequest(name, street, number, complement, city, state, zip) {
       city,
       state,
       zip,
+      email,
     },
   };
 }

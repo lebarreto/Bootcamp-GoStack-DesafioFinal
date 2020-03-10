@@ -53,7 +53,16 @@ export function* deleteRecipient({ payload }) {
 
 export function* addRecipient({ payload }) {
   try {
-    const { name, street, number, complement, city, state, zip } = payload;
+    const {
+      name,
+      street,
+      number,
+      complement,
+      city,
+      state,
+      zip,
+      email,
+    } = payload;
 
     yield call(api.post, `recipient`, {
       name,
@@ -63,6 +72,7 @@ export function* addRecipient({ payload }) {
       city,
       state,
       zip,
+      email,
     });
 
     toast.success('Destinatário criado com sucesso!');

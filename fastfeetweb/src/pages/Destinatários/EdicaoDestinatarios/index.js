@@ -109,11 +109,11 @@ export default function EdicaoDestinatarios({ match }) {
       <EditRecipient>
         <Form initialData={recipients} schema={schema} onSubmit={handleSubmit}>
           <HeaderPages title="Edição de Destinatários">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}

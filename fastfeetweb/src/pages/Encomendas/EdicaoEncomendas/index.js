@@ -105,11 +105,11 @@ export default function EdicaoEncomendas({ match }) {
       <EditOrder>
         <Form initialData={order} schema={schema} onSubmit={handleSubmit}>
           <HeaderPages title="Edição de Encomendas">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}

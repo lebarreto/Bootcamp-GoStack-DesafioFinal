@@ -40,11 +40,11 @@ export default function CriacaoEntregador() {
       <AddDeliveryman>
         <Form onSubmit={handleSubmit} schema={schema}>
           <HeaderPages title="Criação de entregadores">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}

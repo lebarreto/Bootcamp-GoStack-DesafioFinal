@@ -58,11 +58,11 @@ export default function EdicaoEntregador({ match }) {
       <EditDeliveryman>
         <Form initialData={delivery} schema={schema} onSubmit={handleSubmit}>
           <HeaderPages title="Edição de entregadores">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}

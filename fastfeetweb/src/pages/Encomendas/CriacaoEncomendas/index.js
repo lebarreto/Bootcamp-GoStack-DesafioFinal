@@ -78,11 +78,11 @@ export default function CriacaoEncomendas() {
       <EditOrder>
         <Form schema={schema} onSubmit={handleSubmit}>
           <HeaderPages title="Criação de Encomendas">
-            <ButtonBack
+            <IconButton
               Icon={MdKeyboardArrowLeft}
               title="VOLTAR"
               type="button"
-              action={history.goBack}
+              onClick={history.goBack}
             />
             <IconButton
               Icon={MdCheck}
