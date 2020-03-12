@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import { Op } from 'sequelize';
 
 import Order from '../models/Order';
 import Recipient from '../models/Recipient';
@@ -100,6 +101,62 @@ class DeliverymanController {
 		});
 
 		return res.json(order);
+	}
+
+	async listPending(req, res) {
+		const deliveries = await Order.findAll({
+			attributes: ['id', 'canceled_at', 'start_date', 'end_date', 'product'],
+			where: {
+				delivaryman_id: req.params.id,
+				end_date: null
+			},
+			include: [
+				{
+					model: Recipient,
+					as: 'recipient',
+					attributes: ['id', 'name', 'street', 'number', 'state', 'city', 'zip']
+				},
+				{
+					model: Delivery,
+					as: 'delivery',
+					attributes: ['id', 'name', 'email']
+				},
+				{
+					model: Signature,
+					as: 'signature',
+					attributes: ['name', 'path', 'url']
+				}
+			]
+		});
+		return res.json(deliveries);
+	}
+
+	async listDelivered(req, res) {
+		const deliveries = await Order.findAll({
+			attributes: ['id', 'canceled_at', 'start_date', 'end_date', 'product'],
+			where: {
+				delivaryman_id: req.params.id,
+				end_date: { [Op.ne]: null }
+			},
+			include: [
+				{
+					model: Recipient,
+					as: 'recipient',
+					attributes: ['id', 'name', 'street', 'number', 'state', 'city', 'zip']
+				},
+				{
+					model: Delivery,
+					as: 'delivery',
+					attributes: ['id', 'name', 'email']
+				},
+				{
+					model: Signature,
+					as: 'signature',
+					attributes: ['name', 'path', 'url']
+				}
+			]
+		});
+		return res.json(deliveries);
 	}
 }
 

@@ -1,18 +1,14 @@
 import produce from 'immer';
 
 const initialState = {
-  recipient: null,
+  description: null,
 };
 
 export default function auth(state = initialState, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case '@recipient/UPDATE_SUCCESS': {
-        draft.recipient = action.payload.recipient;
-        break;
-      }
-      case '@recipient/DELETE_SUCCESS': {
-        draft.recipient = action.payload.recipient;
+      case '@problem/ADD_PROBLEM_SUCCESS': {
+        draft.description = action.payload.description;
         break;
       }
       default:

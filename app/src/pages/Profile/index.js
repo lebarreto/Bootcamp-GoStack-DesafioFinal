@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { format, parseISO } from 'date-fns';
 
 import {
   Container,
@@ -16,6 +17,8 @@ export default function Profile() {
 
   const user = useSelector(state => state.user.profile);
 
+  const dateFormatted = format(parseISO(user.createdAt), 'dd/MM/yyyy');
+
   function handleLogout() {
     dispatch(signOut());
   }
@@ -31,7 +34,7 @@ export default function Profile() {
         <Label>Email</Label>
         <Text>{user.email}</Text>
         <Label>Data de cadastro</Label>
-        <Text>{user.createdAt}</Text>
+        <Text>{dateFormatted}</Text>
         <LogoutButton onPress={handleLogout}>Log out</LogoutButton>
       </ProfileView>
     </Container>

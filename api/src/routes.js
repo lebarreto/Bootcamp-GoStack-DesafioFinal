@@ -23,6 +23,12 @@ routes.post('/session', SessionController.verifyUser);
 
 routes.get('/recipient/:id', RecipientController.listById);
 
+routes.get('/deliveryman/:id/deliveries/pending', DeliverymanController.listPending);
+routes.get('/deliveryman/:id/deliveries/delivered', DeliverymanController.listDelivered);
+
+routes.post('/delivery/:id/problems', DeliveryProblemController.store);
+routes.get('/delivery/:id/problems', DeliveryProblemController.list);
+
 routes.use(authConfig);
 routes.post('/recipient', RecipientController.addRecipient);
 routes.get('/recipient', RecipientController.listRecipient);
@@ -47,9 +53,7 @@ routes.get('/orders/deliveryTime', OrderController.listDeliveryTime);
 routes.get('/deliveryman/:id/deliveries', DeliverymanController.list);
 routes.put('/deliveryman/:id/update/:delivery', DeliverymanController.update);
 
-routes.post('/delivery/:id/problems', DeliveryProblemController.store);
 routes.get('/delivery', DeliveryProblemController.listAll);
-routes.get('/delivery/:id/problems', DeliveryProblemController.list);
 routes.delete('/problem/:id/cancel-delivery', DeliveryProblemController.destroy);
 
 export default routes;

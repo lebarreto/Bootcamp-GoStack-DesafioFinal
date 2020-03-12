@@ -13,7 +13,7 @@ const Index = () => (
   <NavigationContainer>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+        <StatusBar barStyle="light-content" backgroundColor="#7D40E7" />
         <App />
       </PersistGate>
     </Provider>

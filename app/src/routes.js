@@ -10,6 +10,7 @@ import InformProblem from '~/pages/Order/InformProblem';
 import VisualizeProblem from '~/pages/Order/VisualizeProblems';
 import Confirm from '~/pages/Order/Confirm';
 import Profile from '~/pages/Profile';
+import RoutesOrder from './RoutesOrder';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -33,7 +34,7 @@ export default function createRouter(isSigned = false) {
       >
         <Tabs.Screen
           name="Dashboard"
-          component={Dashboard}
+          component={RoutesOrder}
           options={{
             tabBarLabel: 'Entregas',
             tabBarIcon: ({ color }) => (

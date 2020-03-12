@@ -33,7 +33,7 @@ class DeliveryProblemController {
 			where: {
 				delivery_id: req.params.id
 			},
-			attributes: ['id', 'delivery_id', 'description'],
+			attributes: ['id', 'delivery_id', 'description', 'createdAt'],
 			include: [
 				{
 					model: Order,
