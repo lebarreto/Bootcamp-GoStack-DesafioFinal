@@ -69,6 +69,8 @@ export function* cancelOrder({ payload }) {
 
     yield call(api.put, `orders/${delivery_id}`, { canceled_at });
 
+    // yield call(api.delete, `problem/${id}/cancel-delivery`);
+
     yield put(cancelSuccess({ id, delivery_id, description, delivery }));
     toast.success('Encomenda cancelada com sucesso!');
 

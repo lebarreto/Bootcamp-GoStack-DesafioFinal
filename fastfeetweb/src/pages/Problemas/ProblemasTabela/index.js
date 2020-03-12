@@ -8,18 +8,20 @@ import { Container, Button } from './styles';
 import ButtonMore from '../../../components/ButtonMore';
 import history from '../../../services/history';
 import * as ProblemsActions from '../../../store/modules/orders/actions';
+import api from '../../../services/api';
 
 export default function ProblemasTabela({ data, updateProblem }) {
   const dispatch = useDispatch();
 
-  function handleCancel() {
+  async function handleCancel() {
     var confirmCancel = window.confirm(
       `Você tem certeza que deseja cancelar a encomenda ${data.delivery_id}?`
     );
 
     if (confirmCancel === true) {
       console.tron.log(data);
-      dispatch(ProblemsActions.cancelRequest(data));
+      await dispatch(ProblemsActions.cancelRequest(data));
+      await api.delete(`problem/${data.id}/delete`);
       updateProblem();
     } else {
       history.push('/destinatarios');

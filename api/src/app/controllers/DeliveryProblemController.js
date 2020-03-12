@@ -93,6 +93,16 @@ class DeliveryProblemController {
 		});
 		return res.json(order);
 	}
+
+	async delete(req, res) {
+		await DeliveryProblem.destroy({
+			where: {
+				id: req.params.id
+			}
+		});
+
+		return res.send();
+	}
 }
 
 export default new DeliveryProblemController();
