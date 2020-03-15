@@ -82,7 +82,7 @@ export default function Dashboard() {
           <Text>{user.name}</Text>
         </UserView>
         <LogoutButton onPress={handleLogout}>
-          <Icon name="exit-to-app" size={30} color="#E74040" />
+          <Icon name="exit-to-app" size={25} color="#E74040" />
         </LogoutButton>
       </Header>
       <Nav>

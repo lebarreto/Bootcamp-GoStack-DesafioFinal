@@ -35,6 +35,6 @@ export const Text = styled.Text`
 export const LogoutButton = styled(Button)`
   margin-top: 20px;
   align-items: center;
-  margin-right: 50;
+  margin-right: 50px;
   background: #e74040;
 `;

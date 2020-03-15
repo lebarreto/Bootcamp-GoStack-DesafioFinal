@@ -1,29 +1,24 @@
-import React from 'react';
-import { RNCamera } from 'react-native-camera';
-import { View } from 'react-native';
+import React, { useRef } from 'react';
 
-import { Container, Header } from './styles';
+import { Container, Header, View, Camera, TakePicture } from './styles';
 
 export default function Confirm() {
+  const ref = useRef();
+
+  async function send() {
+    if (ref) {
+      const data = await ref.current.takePictureAsync();
+      console.tron.log(data.uri);
+    }
+  }
+
   return (
     <Container>
       <Header>
         <View>
-          <RNCamera
-            ref={ref => {
-              this.camera = ref;
-            }}
-            type={RNCamera.Constants.Type.back}
-            flashMode={RNCamera.Constants.FlashMode.on}
-            captureAudio={false}
-            iosCameraPermissionOptions={{
-              title: 'Permission to use camera',
-              message: 'We need your permission to use your camera',
-              buttonPositive: 'Ok',
-              buttonNegative: 'Cancel',
-            }}
-          />
+          <Camera ref={ref} captureAudio={false} type="back" />
         </View>
+        <TakePicture onPress={send}>Enviar</TakePicture>
       </Header>
     </Container>
   );

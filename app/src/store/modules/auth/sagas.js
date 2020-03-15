@@ -10,7 +10,13 @@ export function* signIn({ payload }) {
 
     const response = yield call(api.get, `recipient/${id}`);
 
-    yield put(signInSuccess(response.data));
+    if (response.data) {
+      yield put(signInSuccess(response.data));
+    } else {
+      Alert.alert('Falha de autenticação', 'Verifique os seus dados.');
+      yield put(signFailure());
+    }
+    //
   } catch (error) {
     Alert.alert('Falha de autenticação', 'Verifique os seus dados.');
     yield put(signFailure());

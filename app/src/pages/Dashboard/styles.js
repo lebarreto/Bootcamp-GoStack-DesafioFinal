@@ -11,7 +11,7 @@ export const Avatar = styled.Image`
   height: 100px;
   border-radius: 50px;
   align-self: flex-start;
-  margin-left: 30px;
+  margin-left: 10px;
 `;
 
 export const Label = styled.Text`
@@ -47,6 +47,7 @@ export const LogoutButton = styled(Button)`
   align-items: center;
   margin-right: 50px;
   background: #f5f5f5;
+  margin-left: 5px;
 `;
 
 export const Nav = styled.View`

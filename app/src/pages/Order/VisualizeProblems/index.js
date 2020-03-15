@@ -46,7 +46,7 @@ export default function VisualizeProblems() {
       <Header>
         <Title>Encomenda {data.id}</Title>
         {problem.map(p => (
-          <ProblemBody>
+          <ProblemBody key={p.id}>
             <ProblemDiv>
               <Description>{p.description}</Description>
               <Date>{p.dateFormated}</Date>

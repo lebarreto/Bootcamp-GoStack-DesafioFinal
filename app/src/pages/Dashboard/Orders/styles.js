@@ -1,6 +1,11 @@
 import styled from 'styled-components/native';
 
-export const BodyOrder = styled.View`
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  display: flex;
+`;
+
+export const BodyOrder = styled.SafeAreaView`
   display: flex;
   flex-direction: column;
   margin-top: 40px;
