@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { parseISO, format } from 'date-fns';
+import { useIsFocused } from '@react-navigation/native';
 
 import {
   Container,
@@ -23,6 +24,8 @@ import api from '~/services/api';
 import Orders from './Orders';
 
 export default function Dashboard() {
+  const isFocused = useIsFocused();
+
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.user.profile);
@@ -33,6 +36,8 @@ export default function Dashboard() {
   function handleLogout() {
     dispatch(signOut());
   }
+
+  console.tron.log(selected);
 
   function formatDate(data) {
     return data.map(order => ({
@@ -66,8 +71,10 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    loadOrder();
-  }, [selected, user.id]);
+    if (isFocused) {
+      loadOrder();
+    }
+  }, [selected, isFocused]);
 
   return (
     <Container>

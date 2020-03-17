@@ -32,6 +32,9 @@ routes.get('/delivery/:id/problems', DeliveryProblemController.list);
 routes.post('/signatures', signature.single('file'), SignatureController.upload);
 routes.get('/signatures', SignatureController.list);
 
+routes.put('/deliveryman/:id/update/:delivery', DeliverymanController.update);
+routes.put('/orders/:id', OrderController.update);
+
 routes.use(authConfig);
 routes.post('/recipient', RecipientController.addRecipient);
 routes.get('/recipient', RecipientController.listRecipient);
@@ -46,14 +49,12 @@ routes.get('/deliveries/:id', DeliveryController.listById);
 routes.delete('/deliveries/:id', DeliveryController.remove);
 
 routes.post('/orders', OrderController.createOrder);
-routes.put('/orders/:id', OrderController.update);
 routes.delete('/orders/:id', OrderController.delete);
 routes.get('/orders/:id', OrderController.listOrderById);
 routes.get('/orders', OrderController.list);
 routes.get('/orders/deliveryTime', OrderController.listDeliveryTime);
 
 routes.get('/deliveryman/:id/deliveries', DeliverymanController.list);
-routes.put('/deliveryman/:id/update/:delivery', DeliverymanController.update);
 
 routes.get('/delivery', DeliveryProblemController.listAll);
 routes.delete('/problem/:id/cancel-delivery', DeliveryProblemController.destroy);

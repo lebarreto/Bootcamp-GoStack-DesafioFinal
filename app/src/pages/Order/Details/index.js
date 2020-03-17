@@ -71,9 +71,9 @@ export default function Details() {
               </Info>
             </Body>
             <Body>
-              <TextRetirada>DATA DE RETIRADA</TextRetirada>
+              <TextRetirada>DATA DE ENTREGA</TextRetirada>
               <InfoRetirada>
-                {data.start_dateFormated ? data.start_dateFormated : null}
+                {data.end_dateFormated ? data.end_dateFormated : null}
               </InfoRetirada>
             </Body>
           </RowInfo>
