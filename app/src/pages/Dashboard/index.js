@@ -71,10 +71,8 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    if (isFocused) {
-      loadOrder();
-    }
-  }, [selected, isFocused]);
+    loadOrder();
+  }, [selected, user.id]);
 
   return (
     <Container>

@@ -14,7 +14,7 @@ export const Header = styled.View`
 
 export const View = styled.View`
   width: 350px;
-  height: 600px;
+  height: 400px;
   margin: 40px auto;
 `;
 
@@ -24,5 +24,5 @@ export const Camera = styled(RNCamera)`
 
 export const TakePicture = styled(Button)`
   background: #7d40e7;
-  margin: -20px 30px;
+  margin: 20px 30px;
 `;

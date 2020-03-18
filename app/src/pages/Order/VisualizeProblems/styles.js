@@ -11,7 +11,7 @@ export const Header = styled.View`
 
 export const Title = styled.Text`
   color: #ffffff;
-  margin-top: 30px;
+  margin-top: 20px;
   align-self: center;
   font-size: 20px;
   font-weight: bold;
@@ -20,7 +20,7 @@ export const Title = styled.Text`
 export const ProblemBody = styled.View`
   flex-direction: column;
   display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
   border: solid 1px #0000001a;

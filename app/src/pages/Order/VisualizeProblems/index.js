@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { format, parseISO } from 'date-fns';
+import { useIsFocused } from '@react-navigation/native';
 
 import {
   Container,
@@ -18,6 +19,7 @@ export default function VisualizeProblems() {
   const routes = useRoute();
   const { data } = routes.params;
   const navigation = useNavigation();
+  const isFocused = useIsFocused();
 
   const [problem, setProblem] = useState([]);
 

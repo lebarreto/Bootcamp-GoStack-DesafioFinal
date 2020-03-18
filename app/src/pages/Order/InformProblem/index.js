@@ -19,7 +19,7 @@ export default function InformProblem() {
 
   function handleSubmit(data, description) {
     dispatch(addProblemRequest({ data, description }));
-    navigation.navigate('VisualizeProblems', { data }, description);
+    navigation.navigate('VisualizeProblems', { data, description });
   }
 
   return (

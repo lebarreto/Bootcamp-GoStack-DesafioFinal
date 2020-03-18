@@ -34,14 +34,14 @@ export const Body = styled.View`
 `;
 
 export const Text = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
   font-weight: bold;
   margin-top: 10px;
 `;
 
 export const Info = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #666666;
   margin-top: 5px;
 `;
@@ -64,7 +64,7 @@ export const RowInfo = styled.View`
 `;
 
 export const TextRetirada = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
   font-weight: bold;
   margin-top: 10px;
@@ -72,7 +72,7 @@ export const TextRetirada = styled.Text`
 `;
 
 export const InfoRetirada = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #666666;
   margin-top: 5px;
   margin-left: 30px;
@@ -81,12 +81,13 @@ export const InfoRetirada = styled.Text`
 export const Footer = styled.View`
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  margin-left: 30px;
+  margin-top: 10px;
   margin-right: 30px;
   border: solid 1px #0000001a;
   border-radius: 4px;
   height: 72px;
+  width: 100%;
+  padding-left: 18px;
   background: #f4effc;
 `;
 

@@ -11,7 +11,7 @@ export default function SignIn() {
 
   const [id, setId] = useState('');
 
-  const loading = useSelector(state => state.auth.loading);
+  //const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
     dispatch(signInRequest(id));
@@ -30,9 +30,7 @@ export default function SignIn() {
             value={id}
             onChangeText={setId}
           />
-          <SubmitButton loading={loading} onPress={handleSubmit}>
-            Sign in
-          </SubmitButton>
+          <SubmitButton onPress={handleSubmit}>Sign in</SubmitButton>
         </Form>
       </Container>
     </Background>
