@@ -29,6 +29,9 @@ routes.get('/deliveryman/:id/deliveries/delivered', DeliverymanController.listDe
 routes.post('/delivery/:id/problems', DeliveryProblemController.store);
 routes.get('/delivery/:id/problems', DeliveryProblemController.list);
 
+routes.get('/deliveries', DeliveryController.list);
+routes.get('/deliveries/:id', DeliveryController.listById);
+
 routes.post('/signatures', signature.single('file'), SignatureController.upload);
 routes.get('/signatures', SignatureController.list);
 
@@ -44,8 +47,6 @@ routes.delete('/recipient/:id', RecipientController.delete);
 routes.post('/files', upload.single('file'), FileController.upload);
 routes.post('/deliveries', DeliveryController.add);
 routes.put('/deliveries/:id', DeliveryController.update);
-routes.get('/deliveries', DeliveryController.list);
-routes.get('/deliveries/:id', DeliveryController.listById);
 routes.delete('/deliveries/:id', DeliveryController.remove);
 
 routes.post('/orders', OrderController.createOrder);

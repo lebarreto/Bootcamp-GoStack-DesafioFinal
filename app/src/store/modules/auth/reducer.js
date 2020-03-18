@@ -16,7 +16,6 @@ export default function auth(state = initialState, action) {
         break;
       }
       case '@auth/SIGN_FAILURE': {
-        draft.loading = false;
         break;
       }
       case '@auth/SIGN_OUT': {

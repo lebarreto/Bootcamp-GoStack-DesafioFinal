@@ -8,7 +8,7 @@ export function* signIn({ payload }) {
   try {
     const { id } = payload;
 
-    const response = yield call(api.get, `recipient/${id}`);
+    const response = yield call(api.get, `deliveries/${id}`);
 
     if (response.data) {
       yield put(signInSuccess(response.data));

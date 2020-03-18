@@ -73,13 +73,15 @@ export default function Dashboard() {
   useEffect(() => {
     loadOrder();
   }, [selected, user.id]);
-
+  //{uri: `https://api.adorable.io/avatars/285/${user.name}.png`,}
   return (
     <Container>
       <Header>
         <Avatar
           source={{
-            uri: `https://api.adorable.io/avatars/285/${user.name}.png`,
+            uri: user.avatar_id
+              ? user.avatar.url
+              : `https://api.adorable.io/avatars/285/${user.name}.png`,
           }}
         />
         <UserView>
