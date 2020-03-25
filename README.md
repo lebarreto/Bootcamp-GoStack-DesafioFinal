@@ -13,13 +13,15 @@
 <p>Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile)</p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação-e-execução-do-backend">Instalação e execução do Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação-e-execução-do-frontend">Instalação e execução do Frontend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação-e-execução-do-mobile">Instalação e execução do Mobile</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
-## 🚀 Tecnologias
+## :rocket: Tecnologias
 
 Esse projeto foi desenvolvido utilizando as seguintes tecnologias: 
 
@@ -28,78 +30,10 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
     <a href="https://nodejs.org/en/"> Node.js </a>
   </li>
   <li>
-    <a href="https://expressjs.com/">Express</a>
-  </li>
-  <li>
     <a href="https://reactjs.org/">React</a>
   </li>
   <li>
-    <a href="https://github.com/expressjs/multer">Multer</a>
-  </li><li>
-    <a href="https://github.com/remy/nodemon">Nodemon</a>
-  </li>
-  <li>
-    <a href="https://www.docker.com/">Docker</a>
-  </li>
-  <li>
-    <a href="https://docs.docker.com/compose/">Docker Compose</a>
-  </li>
-  <li>
-    <a href="https://www.postgresql.org/">PostgreSQL</a>
-  </li>
-  <li>
-    <a href="https://www.mongodb.com/">MongoDB</a>
-  </li>
-  <li>
-    <a href="https://redis.io/">Redis</a>
-  </li>
-  <li>
-    <a href="https://redux.js.org/">Redux</a>
-  </li>
-  <li>
-    <a href="https://redux-saga.js.org/">Redux Saga</a>
-  </li>
-  <li>
-    <a href="https://github.com/ReactTraining/react-router">React Router</a>
-  </li>
-  <li>
-    <a href="https://github.com/axios/axios">Axios</a>
-  </li>
-  <li>
-    <a href="https://www.npmjs.com/package/history">History</a>
-  </li>
-  <li>
-    <a href="https://reactnavigation.org/">React Navigation</a>
-  </li>
-  <li>
-    <a href="https://infinite.red/reactotron">Reactotron</a>
-  </li>
-  <li>
-    <a href="https://react-icons.netlify.com/#/">React Icons</a>
-  </li>
-  <li>
-    <a href="https://fkhadra.github.io/react-toastify/">React Toastify</a>
-  </li>
-  <li>
-    <a href="https://polished.js.org/">Polished</a>
-  </li>
-  <li>
-    <a href="https://github.com/immerjs/immer">Immer</a>
-  </li>
-  <li>
-    <a href="https://www.npmjs.com/package/history">History</a>
-  </li>
-  <li>
-    <a href="https://styled-components.com/">Styled Components</a>
-  </li>
-  <li>
-    <a href="https://github.com/bee-queue/bee-queue">Bee-Queue</a>
-  </li>
-  <li>
-    <a href="https://www.npmjs.com/package/bcryptjs">Bcryptjs</a>
-  </li>
-  <li>
-    <a href="https://github.com/date-fns/date-fns">Date-fns</a>
+    <a href="https://reactnative.dev/">React Native</a>
   </li>
 </ul>
 
@@ -134,3 +68,20 @@ Antes de executar esse projeto, inicie o backend que pode ser encontrado na past
 2. Rode ```yarn``` para instalar as dependências
 3. Rode ```react-native run-android``` ou ```react-native run-ios``` dependendo do SO para iniciar o cliente (funciona nos dois).
 4. Logue na aplicação usando o ID do entregador
+
+ ## 🤔 Como contribuir
+
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+- Faça push para a sua branch: `git push origin minha-feature`.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
+Feito com ♥ by Letícia Barreto :wave:
